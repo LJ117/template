@@ -28,6 +28,33 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ### 安装 cargo generate
 
+#### Linux 需要安装依赖项
+
+在某些系统上（尤其是 Linux），缺少构建依赖项可能会导致编译失败。试着安装必要的开发工具包：
+
+Ubuntu/Debian:
+
+```bash
+
+sudo apt update
+sudo apt install build-essential pkg-config libssl-dev
+```
+
+Fedora:
+
+```bash
+
+sudo dnf groupinstall "Development Tools"
+sudo dnf install pkg-config openssl-devel
+```
+
+Arch Linux:
+
+```bash
+
+sudo pacman -S base-devel pkgconf openssl
+```
+
 cargo generate 是一个用于生成项目模板的工具。它可以使用已有的 github repo 作为模版生成新的项目。
 
 ```bash
